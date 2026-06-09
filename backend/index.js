@@ -25,19 +25,31 @@ const addressRouter = require("./router/address");
 app.use(express.json()); 
 app.use(express.urlencoded({ extended: true }));
 
+
 // app.use(cors({
-//   origin: 'http://localhost:5173',
-//   credentials: true,
+//   origin: [
+//     "http://localhost:5173",
+//     "https://quickart-qlih5vnp2-satyam-srivastava18s-projects.vercel.app"
+//   ],
+//   credentials: true
 // }));
 
+
+const allowedOrigins = [
+  "http://localhost:5173",
+  "https://quickart-nine.vercel.app"
+];
+
 app.use(cors({
-  origin: [
-    "http://localhost:5173",
-    "https://quickart-qlih5vnp2-satyam-srivastava18s-projects.vercel.app"
-  ],
+  origin: function(origin, callback) {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error("CORS not allowed"));
+    }
+  },
   credentials: true
 }));
-
 
 main().catch(err => console.log(err));
 
