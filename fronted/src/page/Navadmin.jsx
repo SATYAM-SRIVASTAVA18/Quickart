@@ -8,24 +8,17 @@ export default function Navbar() {
   const navigate = useNavigate();
 
   //  Proper Logout Function
-  // const handleLogout = async () => {
-  //   try {
-  //     // await axios.post("http://localhost:3000/logout", {} ,  { withCredentials: true });
-  //       await axios.post(`${import.meta.env.VITE_BACKEND_URL}/logout`, {} ,  { withCredentials: true });
-  //     localStorage.removeItem("user");
-  //     navigate("/");
-  //   } catch (err) {
-  //     console.error("Logout error:", err);
-  //   }
-  // };
-  const handleLogout = () => {
-    localStorage.removeItem("token");
-    localStorage.removeItem("user");
-
-    setUser(null);
-    navigate("/");
-    window.location.reload();
+  const handleLogout = async () => {
+    try {
+      // await axios.post("http://localhost:3000/logout", {} ,  { withCredentials: true });
+        await axios.post(`${import.meta.env.VITE_BACKEND_URL}/logout`);
+      localStorage.removeItem("user");
+      navigate("/");
+    } catch (err) {
+      console.error("Logout error:", err);
+    }
   };
+  
 
   const handleSearch = (e) => {
     e.preventDefault();
