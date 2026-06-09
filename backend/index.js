@@ -54,6 +54,10 @@ app.use("/api/razorpay", RazorpayRouter);
 app.use("/api", addressRouter);
 
 
+app.get("/", (req,res)=>{
+   res.send("API Running");
+});
+
 // Route to get Razorpay key
 app.get('/getkey', (req, res) => {
   res.status(200).json({ key: process.env.RAZORPAY_KEY_ID })
