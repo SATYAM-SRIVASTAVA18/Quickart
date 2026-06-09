@@ -56,9 +56,9 @@ router.post('/login', async (req, res) => {
         message: 'Invalid Password'
       });
     }
-
+console.log("JWT_SECRET =", process.env.JWT_SECRET);
+console.log("JWT_EXPIRE =", process.env.JWT_EXPIRE);
     const token = user.getJWTToken();
-console.log("JWT_SECRET:", process.env.JWT_SECRET);
     res.status(200).json({
       success: true,
       token,
@@ -69,11 +69,18 @@ console.log("JWT_SECRET:", process.env.JWT_SECRET);
         name: user.name
       }
     });
-  } catch (error) {
-    res.status(500).json({
-      message: error.message
-    });
-  }
+  // } catch (error) {
+  //   res.status(500).json({
+  //     message: error.message
+  //   });
+  }catch (error) {
+  console.error("LOGIN ERROR:", error);
+
+  res.status(500).json({
+    message: error.message,
+    stack: error.stack
+  });
+}
 });
 
 module.exports = router;
