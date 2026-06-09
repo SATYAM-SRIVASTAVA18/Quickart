@@ -10,7 +10,8 @@ export default function Navbar() {
   //  Proper Logout Function
   const handleLogout = async () => {
     try {
-      await axios.post("http://localhost:3000/logout", {} ,  { withCredentials: true });
+      // await axios.post("http://localhost:3000/logout", {} ,  { withCredentials: true });
+        await axios.post(`${import.meta.env.VITE_BACKEND_URL}/logout`, {} ,  { withCredentials: true });
       localStorage.removeItem("user");
       navigate("/");
     } catch (err) {

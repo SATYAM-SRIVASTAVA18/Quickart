@@ -41,7 +41,8 @@ export default function Payment() {
       const { data } = await API.post("/razorpay/checkout", {
         amount: product.price,
       });
-      const { data: keyData } = await axios.get("http://localhost:3000/getkey");
+      // const { data: keyData } = await axios.get("http://localhost:3000/getkey");
+      const { data: keyData } = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/getkey`);
       const options = {
         key: keyData.key,
         amount: data.order.amount,
