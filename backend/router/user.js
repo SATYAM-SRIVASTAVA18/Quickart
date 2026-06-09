@@ -58,7 +58,7 @@ router.post('/login', async (req, res) => {
     }
 
     const token = user.getJWTToken();
-
+console.log("JWT_SECRET:", process.env.JWT_SECRET);
     res.status(200).json({
       success: true,
       token,
