@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import API from "../component/Ap";
+import { useNavigate } from "react-router-dom";
 
 function Delete({ id }) {
+  const navigate = useNavigate();
   const handleDelete = async () => {
     try {
       await API.delete(`/products/${id}`);
