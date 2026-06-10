@@ -9,7 +9,7 @@ function Delete({ id }) {
       await API.delete(`/products/${id}`);
       alert("Product deleted successfully");
       navigate("/adminehome"); // ← window.location.href hatao, yeh use 
-      window.location.href = "/adminehome"; // Redirect to admin home after deletion
+      // window.location.href = "/adminehome"; // Redirect to admin home after deletion
     } catch (err) {
       console.error(err);
       alert("Error deleting product");
