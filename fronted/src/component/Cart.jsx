@@ -1,5 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import Footer from "./Footer";
+import useEffect, { useState } from "react";
+import Produnavbar from "./Produnavbar";
 import API from "./Ap";
 
 export default function Cart() {
