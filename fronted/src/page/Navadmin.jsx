@@ -11,7 +11,7 @@ export default function Navbar() {
   const handleLogout = async () => {
     try {
       // await axios.post("http://localhost:3000/logout", {} ,  { withCredentials: true });
-        await axios.post(`${import.meta.env.VITE_BACKEND_URL}/logout`);
+        await axios.post(`${import.meta.env.VITE_API_URL}/logout`);
       localStorage.removeItem("user");
       navigate("/");
     } catch (err) {
