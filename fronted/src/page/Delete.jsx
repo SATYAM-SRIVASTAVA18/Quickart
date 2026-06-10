@@ -1,14 +1,11 @@
 import React, { useState } from 'react';
 import API from "../component/Ap";
-import { useNavigate } from "react-router-dom";
 
 function Delete({ id }) {
-  const navigate = useNavigate();
   const handleDelete = async () => {
     try {
       await API.delete(`/products/${id}`);
       alert("Product deleted successfully");
-      // navigate("/adminehome"); // ← window.location.href hatao, yeh use 
       window.location.href = "/adminehome"; // Redirect to admin home after deletion
     } catch (err) {
       console.error(err);
