@@ -42,7 +42,7 @@ export default function Payment() {
         amount: product.price,
       });
       // const { data: keyData } = await axios.get("http://localhost:3000/getkey");
-      const { data: keyData } = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/getkey`);
+      const { data: keyData } = await axios.get(`${import.meta.env.VITE_API_URL}/getkey`);
       const options = {
         key: keyData.key,
         amount: data.order.amount,
