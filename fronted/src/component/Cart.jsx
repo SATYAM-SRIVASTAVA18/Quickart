@@ -1,8 +1,8 @@
+import { useState, useEffect } from "react";   // ← useState + useEffect dono missing the
 import { useNavigate } from "react-router-dom";
 import Footer from "./Footer";
-import useEffect, { useState } from "react";
-import Produnavbar from "./Produnavbar";
 import API from "./Ap";
+import Produnavbar from "./Produnavbar";  
 
 export default function Cart() {
   const [cart, setCart] = useState(null);
