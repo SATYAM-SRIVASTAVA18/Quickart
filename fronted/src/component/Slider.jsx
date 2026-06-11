@@ -7,10 +7,18 @@ const slides = [
   },
   {
     id: 2,
-    img: "https://t4.ftcdn.net/jpg/10/13/55/19/360_F_1013551992_JVfqERQgQmTCPNDrnGfVzzGleMcrgva4.jpg",
+    img: "https://i.ytimg.com/vi/xuas_Yc7VNQ/maxresdefault.jpg",
   },
   {
     id: 3,
+    img: "https://t4.ftcdn.net/jpg/10/13/55/19/360_F_1013551992_JVfqERQgQmTCPNDrnGfVzzGleMcrgva4.jpg",
+  },
+  {
+    id: 4,
+    img: "https://image.adsoftheworld.com/u272vqmxaqkzxav1al0eaj9zmy2r",
+  },
+  {
+    id: 5,
     img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTg8z57q2nkCoFSkI_Te8afD-X6kc-9oVDPCw&s",
   },
 ];
