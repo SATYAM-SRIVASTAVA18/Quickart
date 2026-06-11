@@ -24,15 +24,6 @@ export default function Navbar() {
   const cart =
     JSON.parse(localStorage.getItem("cart")) || [];
 
-  // const handleLogout = () => {
-
-  //   localStorage.removeItem("token");
-  //   localStorage.removeItem("user");
-
-  //   setUser(null);
-  //   navigate("/login");
-  // };
-
   const handleLogout = () => {
     localStorage.removeItem("token");
     localStorage.removeItem("user");
